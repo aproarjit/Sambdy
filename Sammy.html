@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#11101d">
+<meta name="description" content="A little birthday surprise for Samriddhi.">
+<title>For Samriddhi 💗</title>
+<style>
+:root{
+  --bg:#11101d;--panel:rgba(255,255,255,.075);--text:#fff8f4;--muted:#c7bfd5;
+  --accent:#f6cd87;--accent2:#ff91c2;--border:rgba(255,255,255,.15);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;width:100%;height:100%;overflow:hidden}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);user-select:none;-webkit-user-select:none}
+body[data-theme="pink"]{--bg:#291520;--panel:rgba(255,220,235,.09);--text:#fff2f7;--muted:#e5bacd;--accent:#ffb4d0;--accent2:#ffd6a0;--border:rgba(255,220,235,.18)}
+body[data-theme="lavender"]{--bg:#1d1731;--panel:rgba(220,210,255,.09);--text:#faf5ff;--muted:#d0c5ee;--accent:#d0b5ff;--accent2:#ffb9de;--border:rgba(220,210,255,.18)}
+body[data-theme="ocean"]{--bg:#0d202a;--panel:rgba(190,235,255,.09);--text:#effaff;--muted:#b9dce7;--accent:#8ee2ed;--accent2:#9cbcff;--border:rgba(190,235,255,.18)}
+body[data-theme="mint"]{--bg:#10251f;--panel:rgba(190,255,220,.09);--text:#effff6;--muted:#b8d9ca;--accent:#91e6b5;--accent2:#b3d9ff;--border:rgba(190,255,220,.18)}
+body[data-theme="coral"]{--bg:#2b1719;--panel:rgba(255,220,210,.09);--text:#fff4f0;--muted:#e7c5bd;--accent:#ffad9c;--accent2:#ffd28e;--border:rgba(255,220,210,.18)}
+body[data-mode="light"]{--bg:#f7f4fb;--panel:rgba(255,255,255,.82);--text:#282238;--muted:#70687e;--border:rgba(45,30,70,.13)}
+body[data-mode="light"][data-theme="pink"]{--bg:#fff0f5;--text:#51283e;--muted:#96677e;--accent:#c73f7d;--accent2:#bd7830}
+body[data-mode="light"][data-theme="lavender"]{--bg:#f3efff;--text:#34284e;--muted:#75678e;--accent:#7950bc;--accent2:#bd4f92}
+body[data-mode="light"][data-theme="ocean"]{--bg:#eaf8fc;--text:#183946;--muted:#587783;--accent:#087f98;--accent2:#426fce}
+body[data-mode="light"][data-theme="mint"]{--bg:#eaf8ef;--text:#183d2d;--muted:#587a68;--accent:#267c50;--accent2:#397db3}
+body[data-mode="light"][data-theme="coral"]{--bg:#fff0ec;--text:#4a2523;--muted:#93645d;--accent:#c64c40;--accent2:#a86b18}
+button,input,a{font:inherit}button{cursor:pointer}
+#app{position:relative;isolation:isolate;width:100%;height:100dvh;overflow:hidden;background:radial-gradient(ellipse at 10% 10%,color-mix(in srgb,var(--accent2) 16%,transparent),transparent 45%),radial-gradient(ellipse at 90% 85%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 45%),var(--bg);transition:background .4s}
+.ambient{position:absolute;inset:0;pointer-events:none;opacity:.32;background-image:radial-gradient(var(--text) .7px,transparent .7px);background-size:29px 29px}
+.topbar{position:absolute;z-index:20;top:calc(12px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);display:flex;justify-content:center;padding:0 4px}
+.theme-bar{display:flex;gap:9px;padding:9px 12px;border:1px solid var(--border);border-radius:30px;background:var(--panel);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.swatch{width:13px;height:13px;padding:0;border:0;border-radius:50%;outline:1px solid transparent}
+.swatch.active{outline:2px solid var(--text);outline-offset:3px}
+.swatch[data-pick="gold"]{background:#e8bd76}.swatch[data-pick="pink"]{background:#ff8ebc}.swatch[data-pick="lavender"]{background:#bd9cff}.swatch[data-pick="ocean"]{background:#75d8e8}.swatch[data-pick="mint"]{background:#72dca1}.swatch[data-pick="coral"]{background:#ff987f}
+.corner-btn{position:absolute;z-index:22;top:calc(12px + env(safe-area-inset-top));padding:9px 11px;border-radius:25px;border:1px solid var(--border);color:var(--text);background:var(--panel);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);font-size:12px}
+#aboutBtn{left:12px}#modeToggle{right:12px}
+.progress{position:absolute;z-index:15;top:calc(57px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);width:min(180px,42vw);height:3px;border-radius:8px;background:var(--border);overflow:hidden}
+.progress-fill{width:10%;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .35s}
+.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:76px 20px 20px;padding-bottom:calc(20px + env(safe-area-inset-bottom));opacity:0;visibility:hidden;pointer-events:none;transform:translateY(12px) scale(.985);transition:opacity .35s,transform .4s,visibility .4s}
+.slide.active{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.content{width:min(100%,490px);max-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:clamp(8px,1.7vh,14px);overflow:visible}
+.eyebrow{color:var(--accent);text-transform:uppercase;font-size:10px;letter-spacing:2.4px;font-weight:800}
+h1,h2,p{margin:0}h1{font-size:clamp(30px,7.8vw,53px);line-height:1.08;letter-spacing:-1.5px}h2{font-size:clamp(23px,5.8vw,34px);line-height:1.14;letter-spacing:-.7px}
+p{font-size:14px;line-height:1.55;color:var(--muted)}
+.gradient{color:var(--accent2);background:linear-gradient(120deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.glass{width:100%;padding:clamp(13px,2.2vh,21px);border:1px solid var(--border);border-radius:24px;background:var(--panel);box-shadow:0 18px 55px rgba(0,0,0,.12);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.big-emoji{font-size:clamp(46px,12vw,80px);filter:drop-shadow(0 8px 22px color-mix(in srgb,var(--accent2) 25%,transparent));animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(2deg)}}
+.primary,.secondary{padding:12px 18px;border-radius:15px;font-size:13px;font-weight:800;transition:transform .15s;border:1px solid transparent}
+.primary{color:#211628;background:linear-gradient(115deg,var(--accent),var(--accent2));border:0}
+.secondary{border-color:var(--border);color:var(--text);background:var(--panel)}
+.primary:active,.secondary:active{transform:scale(.96)}
+.button-row{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;width:100%}
+input[type="password"]{width:100%;max-width:270px;padding:13px;border:1px solid var(--border);outline:none;border-radius:15px;text-align:center;letter-spacing:8px;color:var(--text);background:var(--bg);font-size:20px;user-select:text;-webkit-user-select:text}
+input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--accent2);font-size:12px}
+.story-card{text-align:left}.story-card p+p{margin-top:9px}
+.letter{width:100%;text-align:left;max-height:none;overflow:visible;padding:clamp(12px,2vh,18px);border:1px solid var(--border);border-radius:22px;background:var(--panel)}
+.letter p{margin-bottom:8px;font-size:clamp(11px,1.6vh,13px);line-height:1.43}.letter p:last-child{margin-bottom:0}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}.pills span{border:1px solid var(--border);background:var(--panel);padding:7px 10px;border-radius:24px;font-size:11px;color:var(--muted)}
+.wish{padding:17px;border:1px solid var(--border);border-radius:22px;background:var(--panel);width:100%}
+.insta-list{display:grid;gap:8px;width:100%}.insta-link{display:flex;align-items:center;gap:11px;text-align:left;padding:10px 12px;text-decoration:none;color:var(--text);border:1px solid var(--border);background:var(--panel);border-radius:16px}
+.insta-icon{width:36px;height:36px;flex:0 0 36px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,#f7a9ca,#a9a1ff,#8fdde7);color:#28172f;font-size:19px}
+.insta-link strong{display:block;font-size:12px}.insta-link small{display:block;margin-top:2px;color:var(--muted);font-size:10px}
+.hint{font-size:10px;opacity:.8}.particle{position:fixed;z-index:100;pointer-events:none;font-size:23px;animation:pop .95s ease-out forwards}
+@keyframes pop{0%{transform:translate(-50%,-50%) scale(.3);opacity:0}20%{opacity:1}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% - 90px)) scale(1.3) rotate(20deg);opacity:0}}
+.shake{animation:shake .25s}@keyframes shake{25%,75%{transform:translateX(-4px)}50%{transform:translateX(4px)}}
+#confetti,#fireworks{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none}
+#confetti{z-index:5}#fireworks{z-index:6}
+.modal-backdrop{position:absolute;z-index:60;inset:0;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(8,5,18,.6);backdrop-filter:blur(8px)}
+.modal-backdrop.open{display:flex}.modal{width:min(100%,420px);max-height:85%;overflow:auto;border:1px solid var(--border);border-radius:24px;background:var(--bg);padding:22px;box-shadow:0 20px 70px rgba(0,0,0,.3)}
+.modal h2{margin-bottom:10px}.modal p{margin:10px 0}.modal .button-row{margin-top:16px}
+#countdown{font-size:clamp(42px,12vw,72px);font-weight:900;color:var(--accent2);min-height:1.15em}
+#feedbackModal textarea{width:100%;min-height:90px;resize:vertical;padding:12px;border-radius:14px;border:1px solid var(--border);background:var(--panel);color:var(--text);font:inherit;user-select:text}
+#feedbackModal select{width:100%;padding:11px;border-radius:12px;border:1px solid var(--border);background:var(--bg);color:var(--text)}
+@media(max-height:720px){
+ .slide{padding-top:70px;padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+ .content{gap:7px}.glass{padding:12px}.big-emoji{font-size:45px}
+ p{font-size:12px;line-height:1.4}.letter{padding:11px}.letter p{font-size:10.5px;line-height:1.32;margin-bottom:6px}
+ .primary,.secondary{padding:10px 14px}.insta-link{padding:7px 10px}.insta-icon{width:30px;height:30px;flex-basis:30px}
+}
+@media(max-height:620px){
+ .eyebrow{font-size:8px;letter-spacing:1.7px}.content{gap:5px}h1{font-size:clamp(27px,6vw,40px)}h2{font-size:22px}
+ .letter p{font-size:9.5px;line-height:1.25;margin-bottom:4px}.letter{padding:9px}.big-emoji{font-size:38px}
+}
+@media(max-width:360px){.topbar{left:50%;}.theme-bar{gap:7px;padding:8px 10px}.corner-btn{font-size:10px;padding:8px}.slide{padding-left:14px;padding-right:14px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body data-theme="gold" data-mode="dark">
+<div id="app">
+  <div class="ambient"></div>
+  <canvas id="confetti"></canvas><canvas id="fireworks"></canvas>
+
+  <button class="corner-btn" id="aboutBtn" aria-haspopup="dialog">ⓘ About</button>
+  <div class="topbar">
+    <div class="theme-bar" aria-label="Colour themes">
+      <button class="swatch active" data-pick="gold" aria-label="Midnight Gold" title="Midnight Gold"></button>
+      <button class="swatch" data-pick="pink" aria-label="Blush Pink" title="Blush Pink"></button>
+      <button class="swatch" data-pick="lavender" aria-label="Lavender Dreams" title="Lavender Dreams"></button>
+      <button class="swatch" data-pick="ocean" aria-label="Ocean Blue" title="Ocean Blue"></button>
+      <button class="swatch" data-pick="mint" aria-label="Mint Glow" title="Mint Glow"></button>
+      <button class="swatch" data-pick="coral" aria-label="Coral Sunset" title="Coral Sunset"></button>
+    </div>
+  </div>
+  <button class="corner-btn" id="modeToggle">☀️ Light</button>
+  <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+
+  <!-- 1: Welcome -->
+  <section class="slide active" id="s1">
+    <div class="content">
+      <div class="eyebrow">A little surprise for someone special</div>
+      <div class="big-emoji">🎁✨</div>
+      <h1>Hey Samriddhi,<br><span class="gradient">It's Your Special Day!</span></h1>
+      <p>20 October. Birthday girl ka special day.<br>Aur tumhara yah bhai kuch laaya hai. 👀</p>
+      <button class="primary" onclick="go(2)">Chalo calibrate kare →</button>
+      <div class="hint">Screen par tap karo… thodi magic milegi ✨</div>
+    </div>
+  </section>
+
+  <!-- 2: Password -->
+  <section class="slide" id="s2">
+    <div class="content">
+      <div class="big-emoji">🔐</div><div class="eyebrow">Security check, Madam</div>
+      <h2>Itna bhi easy nahi hai.</h2>
+      <p>Mere phone ka password yad he?.<br>Dekhte hain kitni smart ho tum. 😏</p>
+      <div class="glass" style="display:flex;align-items:center;flex-direction:column;gap:12px">
+        <input id="passwordInput" type="password" inputmode="numeric" maxlength="4" placeholder="••••" aria-label="Password">
+        <button class="primary" onclick="checkPassword()">Unlock karo 🔓</button>
+        <div class="message" id="passwordMessage" aria-live="polite"></div>
+      </div>
+      <div class="button-row"><button class="secondary" onclick="go(1)">← Back</button></div>
+    </div>
+  </section>
+
+  <!-- 3: Funny reveal -->
+  <section class="slide" id="s3">
+    <div class="content">
+      <div class="big-emoji">😭😂</div><div class="eyebrow">Access granted…</div>
+      <h1>Waah, Yaar!</h1>
+      <div class="glass">
+        <p>Achaa ji, password bhi yaad hai!</p>
+        <p style="margin-top:8px;color:var(--text)">Ab zyada proud mat hona. 😌</p>
+        <p style="margin-top:7px">Waise thoda sa proud ho sakti ho. 🤏😂</p>
+      </div>
+      <div class="button-row"><button class="secondary" onclick="go(2)">← Back</button><button class="primary" onclick="go(4)">Aage chalo →</button></div>
+    </div>
+  </section>
+
+  <!-- 4: Birthday maths -->
+  <section class="slide" id="s4">
+    <div class="content">
+      <div class="eyebrow">An extremely important fact</div><div class="big-emoji">👑</div>
+      <h1>64 days older.<br><span class="gradient">64× wiser?</span></h1>
+      <div class="glass">
+        <p>Main tumse 64 din bada hoon,</p>
+        <p style="margin-top:8px;color:var(--text)">Respect toh banta hai, Sammy! 😌</p>
+        <p style="margin-top:8px">Meri maturity ka result abhi pending hai. Tumhara bhi check karna padega. 😂</p>
+      </div>
+      <div class="button-row"><button class="secondary" onclick="go(3)">← Back</button><button class="primary" onclick="go(5)">Next →</button></div>
+    </div>
+  </section>
+
+  <!-- 5: No-photo visual -->
+  <section class="slide" id="s5">
+    <div class="content">
+      <div class="eyebrow">No photo needed</div>
+      <div style="position:relative;width:190px;height:160px;display:grid;place-items:center;flex-shrink:0">
+        <div style="position:absolute;width:150px;height:150px;border:1px solid var(--border);border-radius:50%;animation:float 5s infinite"></div>
+        <div style="position:absolute;width:112px;height:112px;border:1px dashed var(--accent);border-radius:50%;opacity:.7"></div>
+        <div class="big-emoji" style="font-size:68px">🌷</div>
+        <span style="position:absolute;top:5px;right:16px;font-size:24px">✨</span><span style="position:absolute;bottom:8px;left:10px;font-size:23px">💗</span><span style="position:absolute;top:20px;left:10px;font-size:19px">⭐</span>
+      </div>
+      <h2>Samriddhi Sharma</h2>
+      <p>Birthday girl. Class 11 wali partner-in-crime.<br>Aur meri pyari behen aur dost bhi. 🤭</p>
+      <p>Photos toh nahi hain, par memories abhi bhi hain. 🫶</p>
+      <div class="button-row"><button class="secondary" onclick="go(4)">← Back</button><button class="primary" onclick="go(6)">Yeh memory yaad hai? →</button></div>
+    </div>
+  </section>
+
+  <!-- 6: Shared memories -->
+  <section class="slide" id="s6">
+    <div class="content">
+      <div class="eyebrow">Little moments, real memories</div><div class="big-emoji">📚🫶</div>
+      <h2>School se shuru hui<br>ek alag si bonding.</h2>
+      <div class="glass story-card">
+        <p>School ki baatein aur kabhi-kabhi project ki tension… koi na. 😭</p>
+        <p>Har cheez perfect ho, zaroori nahi. Kuch memories bas isliye special hoti hain kyunki unmein apne log hote hain.</p>
+        <p>Rakhi wali memory bhi apni jagah special hai. 💗</p>
+      </div>
+      <p>Project ho ya life, hope hai hum ek-doosre ko support karte rahein, hai na? 🤝</p>
+      <div class="button-row"><button class="secondary" onclick="go(5)">← Back</button><button class="primary" onclick="go(7)">Special latter 💌</button></div>
+    </div>
+  </section>
+
+  <!-- 7: Letter -->
+  <section class="slide" id="s7">
+    <div class="content">
+      <div class="eyebrow">A little note from your annoying bhai</div>
+      <h2>Dear Samriddhi, 💌</h2>
+      <div class="letter">
+        <p>Har relation ko explain karne ke liye koi label zaroori nahi hota.</p>
+        <p>Tum meri biological sister nahi ho, but honestly, hamara bond mere liye sister-friend jaisa special hai. 💗</p>
+        <p>Class 11, school ki baatein, NCSC project aur Rakhi ka moment — in sabki apni jagah hai. Har memory badi ya perfect ho, zaroori nahi; kuch moments bas apne lagte hain.</p>
+        <p>Main kabhi-kabhi annoying ho sakta hoon. Okay, kaafi annoying. 😭😂 But I genuinely wish ki tum khush raho, confident raho aur apne dreams ke liye aage badhti raho.</p>
+        <p>Life mein changes aayenge, school bhi khatam hoga aur naye log milenge. Bas hope hai ki humari bonding mein respect, care aur honesty hamesha rahe.</p>
+        <p style="color:var(--accent);font-weight:800">Happy Birthday, Samriddhi. Thanks for being a special part of my school-life story. 🫶</p>
+      </div>
+      <div class="button-row"><button class="secondary" onclick="go(6)">← Back</button><button class="primary" onclick="go(8)">Ek caring reminder →</button></div>
+    </div>
+  </section>
+
+  <!-- 8: Care -->
+  <section class="slide" id="s8">
+    <div class="content">
+      <div class="big-emoji">📚🌱</div><div class="eyebrow">Class 11 survival guide</div>
+      <h2>Birthday girl, ek promise?</h2>
+      <div class="glass">
+        <p>Studies important hain, but tumhari health aur peace bhi utni hi important hai.</p>
+        <p style="margin-top:9px">Time par rest lena, paani peena aur khud par unnecessary pressure mat daalna.</p>
+        <p style="margin-top:9px;color:var(--text)">Apne dreams ko seriously lena. Marks important ho sakte hain, but they don't define your whole worth. 💗</p>
+      </div>
+      <div class="pills"><span>📖 Study</span><span>🌿 Rest</span><span>✨ Keep growing</span></div>
+      <div class="button-row"><button class="secondary" onclick="go(7)">← Back</button><button class="primary" onclick="go(9)">Wish time 🌠</button></div>
+    </div>
+  </section>
+
+  <!-- 9: Wish + countdown -->
+  <section class="slide" id="s9">
+    <div class="content">
+      <div class="big-emoji">🌠</div><div class="eyebrow">Make a little wish</div>
+      <h1>Ek wish maango.<br><span class="gradient">Dil se, birthday girl.</span></h1>
+      <div class="wish">
+        <p>Ab aankhein band karne ka mann ho toh kar lo, aur apne liye ek achhi si wish maango. ✨</p>
+        <p style="margin-top:8px">Ready? Countdown ke baad surprise ka final part unlock hoga. 💗</p>
+      </div>
+      <div id="countdown" aria-live="polite"></div>
+      <div class="button-row"><button class="secondary" onclick="go(8)">← Back</button><button class="primary" id="wishButton" onclick="startCountdown()">3… 2… 1… 🎉</button></div>
+    </div>
+  </section>
+
+  <!-- 10: Finale -->
+  <section class="slide" id="s10">
+    <div class="content">
+      <div class="eyebrow">20 October · Your special day</div><div class="big-emoji">🎂💗✨</div>
+      <h1 style="font-size:clamp(32px,8vw,56px)">Happy Birthday,<br><span class="gradient">Samriddhi!</span></h1>
+      <p>Keep smiling, keep growing, aur apni life ke chhote-bade moments enjoy karna. 🫶</p>
+      <div class="glass">
+        <p style="color:var(--text);font-weight:800">Birthday ek din ka hota hai.</p>
+        <p>Surprise kuch minutes ka.</p>
+        <p style="margin-top:7px">But tum meri sister ho — every single day.</p>
+        <p style="margin-top:8px;color:var(--accent);font-weight:800">Love you, Samriddhi! 💗</p>
+        <p style="font-size:11px;margin-top:4px">Tumhara annoying bhai. 😌</p>
+      </div>
+      <div class="insta-list">
+        <a class="insta-link" href="https://www.instagram.com/aproarjit?vrfl=bnhzMHQwY3hsc2Fs" target="_blank" rel="noopener noreferrer">
+          <div class="insta-icon">📸</div><div><strong>Find me on Instagram</strong><small>@aproarjit</small></div><span style="margin-left:auto">↗</span>
+        </a>
+        <a class="insta-link" href="https://www.instagram.com/samriddhi.core_20?obrf=ZDE2MmdpaDFzb3Zr" target="_blank" rel="noopener noreferrer">
+          <div class="insta-icon">💖</div><div><strong>Birthday girl</strong><small>@samriddhi.core_20</small></div><span style="margin-left:auto">↗</span>
+        </a>
+      </div>
+      <div class="button-row">
+        <button class="secondary" onclick="openFeedback()">Feedback 💌</button>
+        <button class="secondary" onclick="go(1)">Fir se dekho ↺</button>
+      </div>
+      <div class="hint">Finale par raho — fireworks chalte rahenge ✨</div>
+    </div>
+  </section>
+
+  <!-- About modal -->
+  <div class="modal-backdrop" id="aboutModal" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+    <div class="modal">
+      <h2 id="aboutTitle">About this surprise 💗</h2>
+      <p>Ye chhota sa birthday surprise Arjit ne Samriddhi ke liye banaya hai — school ki memories, sister-friend bond aur ek simple birthday wish ke saath.</p>
+      <p>Made with care, before your special day. ✨</p>
+      <p class="hint">Note: Password gate fun ke liye hai, strong security nahi.</p>
+      <div class="button-row"><button class="primary" onclick="closeModal('aboutModal')">Got it 💗</button></div>
+    </div>
+  </div>
+
+  <!-- Feedback modal -->
+  <div class="modal-backdrop" id="feedbackModal" role="dialog" aria-modal="true" aria-labelledby="feedbackTitle">
+    <div class="modal">
+      <h2 id="feedbackTitle">Tumhe kaisa laga? 💌</h2>
+      <p>Apna honest feedback likho. Message automatically send nahi hoga — tum app mein jaakar khud Send kar sakti ho.</p>
+      <label for="rating" class="hint">Your rating</label>
+      <select id="rating"><option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ Loved it!</option><option value="⭐⭐⭐⭐">⭐⭐⭐⭐ Really nice</option><option value="⭐⭐⭐">⭐⭐⭐ It was good</option><option value="⭐⭐">⭐⭐ Needs improvement</option><option value="⭐">⭐ Honest feedback</option></select>
+      <label for="feedbackText" class="hint" style="display:block;margin-top:12px">Message (optional)</label>
+      <textarea id="feedbackText" placeholder="Jo bhi honestly kehna ho, yahan likho…"></textarea>
+      <div class="button-row">
+        <button class="primary" onclick="sendFeedback('whatsapp')">WhatsApp ↗</button>
+        <button class="secondary" onclick="sendFeedback('instagram')">Instagram ↗</button>
+        <button class="secondary" onclick="closeModal('feedbackModal')">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sound settings -->
+  <div class="modal-backdrop" id="soundModal" role="dialog" aria-modal="true" aria-labelledby="soundTitle">
+    <div class="modal">
+      <h2 id="soundTitle">Sound settings 🔊</h2>
+      <p>Sound browser ki first interaction ke baad start hota hai. Tum ise kabhi bhi On/Off kar sakti ho.</p>
+      <div class="button-row"><button class="primary" id="soundToggle" onclick="toggleSound()">Turn sound on</button><button class="secondary" onclick="closeModal('soundModal')">Close</button></div>
+    </div>
+  </div>
+  <button class="corner-btn" id="soundBtn" style="top:calc(60px + env(safe-area-inset-top));right:12px" aria-label="Sound settings">🔊 Sound</button>
+</div>
+
+<script>
+const TOTAL=10;
+let currentSlide=1,confettiFrame=null,fireworksFrame=null;
+let audioContext=null,soundEnabled=true,ambientOscillators=[],ambientGain=null,ambientTimer=null;
+let countdownTimer=null,countdownActive=false;
+const themes=["gold","pink","lavender","ocean","mint","coral"];
+const slideThemes={1:"gold",2:"lavender",3:"pink",4:"coral",5:"mint",6:"ocean",7:"lavender",8:"mint",9:"ocean",10:"pink"};
+function safeGet(key){try{return localStorage.getItem(key)}catch(e){return null}}
+function safeSet(key,value){try{localStorage.setItem(key,value)}catch(e){}}
+function haptic(pattern=12){try{if(navigator.vibrate)navigator.vibrate(pattern)}catch(e){}}
+function applyTheme(theme,manual=false){
+ if(!themes.includes(theme))theme="gold";
+ document.body.dataset.theme=theme;
+ document.querySelectorAll(".swatch").forEach(btn=>btn.classList.toggle("active",btn.dataset.pick===theme));
+ if(manual)safeSet("samBirthdayTheme",theme);
+}
+function applyMode(mode){
+ document.body.dataset.mode=mode==="light"?"light":"dark";
+ document.getElementById("modeToggle").textContent=mode==="light"?"🌙 Dark":"☀️ Light";
+ safeSet("samBirthdayMode",document.body.dataset.mode);
+}
+document.querySelectorAll(".swatch").forEach(btn=>btn.addEventListener("click",()=>{
+ applyTheme(btn.dataset.pick,true);haptic(12);playTone(660,.055,"sine",.025);
+}));
+document.getElementById("modeToggle").addEventListener("click",()=>{
+ applyMode(document.body.dataset.mode==="dark"?"light":"dark");haptic(12);playTone(520,.06,"sine",.02);
+});
+applyMode(safeGet("samBirthdayMode")||"dark");
+applyTheme(safeGet("samBirthdayTheme")||"gold");
+function go(number){
+ clearCountdown();
+ const previous=currentSlide;
+ currentSlide=Math.max(1,Math.min(TOTAL,number));
+ document.querySelectorAll(".slide").forEach(slide=>slide.classList.toggle("active",slide.id==="s"+currentSlide));
+ document.getElementById("progressFill").style.width=(currentSlide/TOTAL*100)+"%";
+ // Each screen has its own default palette. A manual selection remains in place until the next screen.
+ applyTheme(slideThemes[currentSlide],false);
+ if(currentSlide===2)setTimeout(()=>{const input=document.getElementById("passwordInput");if(input)input.focus()},350);
+ if(previous===10&&currentSlide!==10)stopFireworks();
+ if(currentSlide===10){celebrate();startFireworks()}
+ haptic(10);playTone(currentSlide===10?880:520,.07,"sine",.025);
+}
+function checkPassword(){
+ const input=document.getElementById("passwordInput"),msg=document.getElementById("passwordMessage");
+ if(input.value==="2552"){msg.textContent="Access granted. Madam, aap toh expert nikli! 💗";haptic([20,35,20]);playTone(740,.09,"sine",.04);setTimeout(()=>go(3),500)}
+ else{msg.textContent="Wrong password! Ek aur try karo, detective. 😏";const glass=input.closest(".glass");glass.classList.remove("shake");void glass.offsetWidth;glass.classList.add("shake");haptic(35);playTone(180,.12,"triangle",.035);input.select()}
+}
+document.getElementById("passwordInput").addEventListener("keydown",e=>{if(e.key==="Enter")checkPassword()});
+const emojis=["💗","💖","✨","🌸","🫶","💫","💕","🎀","⭐","🌷","💝","🦋"];
+function popEmoji(x,y,count=3){for(let i=0;i<count;i++){const el=document.createElement("span");el.className="particle";el.textContent=emojis[Math.floor(Math.random()*emojis.length)];el.style.left=(x+(Math.random()-.5)*65)+"px";el.style.top=(y+(Math.random()-.5)*25)+"px";el.style.setProperty("--dx",((Math.random()-.5)*90)+"px");document.body.appendChild(el);setTimeout(()=>el.remove(),1000)}}
+document.addEventListener("pointerdown",e=>{if(e.target.closest("input,textarea,button,a,select"))return;popEmoji(e.clientX,e.clientY,2);unlockSound()});
+function unlockSound(){if(!soundEnabled&&audioContext){return}if(!audioContext){try{audioContext=new(window.AudioContext||window.webkitAudioContext)()}catch(e){return}}if(audioContext.state==="suspended")audioContext.resume().catch(()=>{});if(soundEnabled)startAmbient()}
+function playTone(freq=520,duration=.08,type="sine",volume=.025){
+ if(!soundEnabled)return;unlockSound();if(!audioContext)return;
+ try{const osc=audioContext.createOscillator(),gain=audioContext.createGain();osc.type=type;osc.frequency.value=freq;gain.gain.setValueAtTime(volume,audioContext.currentTime);gain.gain.exponentialRampToValueAtTime(.001,audioContext.currentTime+duration);osc.connect(gain);gain.connect(audioContext.destination);osc.start();osc.stop(audioContext.currentTime+duration)}catch(e){}
+}
+function startAmbient(){
+ if(!soundEnabled||!audioContext||ambientOscillators.length)return;
+ try{
+  ambientGain=audioContext.createGain();ambientGain.gain.value=.012;ambientGain.connect(audioContext.destination);
+  [130.81,196,261.63].forEach((freq,i)=>{const osc=audioContext.createOscillator();const gain=audioContext.createGain();osc.type=i===1?"sine":"triangle";osc.frequency.value=freq;gain.gain.value=i===0?.18:.1;osc.connect(gain);gain.connect(ambientGain);osc.start();ambientOscillators.push({osc,gain})});
+  ambientTimer=setInterval(()=>{if(!soundEnabled||!audioContext)return;const notes=[261.63,329.63,392,440,523.25];const freq=notes[Math.floor(Math.random()*notes.length)];playTone(freq,.45,"sine",.012)},2100);
+ }catch(e){}
+}
+function stopAmbient(){
+ if(ambientTimer){clearInterval(ambientTimer);ambientTimer=null}
+ ambientOscillators.forEach(o=>{try{o.osc.stop()}catch(e){}});ambientOscillators=[];ambientGain=null;
+}
+function setSound(enabled){
+ soundEnabled=enabled;
+ if(enabled){unlockSound();startAmbient();playTone(660,.1,"sine",.035)}
+ else stopAmbient();
+ document.getElementById("soundBtn").textContent=enabled?"🔊 Sound: On":"🔇 Sound: Off";
+ document.getElementById("soundToggle").textContent=enabled?"Turn sound off":"Turn sound on";
+ safeSet("samBirthdaySound",enabled?"on":"off");
+}
+function toggleSound(){if(!audioContext){try{audioContext=new(window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(audioContext&&audioContext.state==="suspended")audioContext.resume().catch(()=>{});setSound(!soundEnabled)}
+document.getElementById("soundBtn").addEventListener("click",()=>{openModal("soundModal");unlockSound()});
+// First user interaction enables the sound experience only if it was previously switched on; the first interaction unlocks audio support.
+document.addEventListener("click",function firstInteraction(){unlockSound();document.removeEventListener("click",firstInteraction)}, {once:true});
+if(safeGet("samBirthdaySound")==="off")soundEnabled=false;
+if(safeGet("samBirthdaySound")==="on")soundEnabled=true;
+document.getElementById("soundBtn").textContent=soundEnabled?"🔊 Sound: On":"🔇 Sound: Off";
+document.getElementById("soundToggle").textContent=soundEnabled?"Turn sound off":"Turn sound on";
+
+function clearCountdown(){if(countdownTimer){clearInterval(countdownTimer);countdownTimer=null}countdownActive=false;const cd=document.getElementById("countdown");if(cd)cd.textContent="";const btn=document.getElementById("wishButton");if(btn){btn.disabled=false;btn.style.opacity="1";btn.textContent="3… 2… 1… 🎉"}}
+function startCountdown(){
+ if(countdownActive)return;countdownActive=true;const cd=document.getElementById("countdown"),btn=document.getElementById("wishButton");let n=3;
+ btn.disabled=true;btn.style.opacity=".65";btn.textContent="Make a wish…";cd.textContent=n;playTone(440,.12,"sine",.04);haptic(15);
+ countdownTimer=setInterval(()=>{n--;if(n>0){cd.textContent=n;playTone(440+n*90,.12,"sine",.04);haptic(15)}else{clearInterval(countdownTimer);countdownTimer=null;cd.textContent="🎉";playTone(880,.2,"sine",.05);haptic([20,40,20]);setTimeout(()=>go(10),650)}},1000);
+}
+function celebrate(){
+ const canvas=document.getElementById("confetti"),ctx=canvas.getContext("2d");if(!ctx)return;
+ const rect=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);canvas.width=rect.width*dpr;canvas.height=rect.height*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+ const pieces=Array.from({length:100},()=>({x:Math.random()*rect.width,y:-20-Math.random()*rect.height*.5,size:3+Math.random()*5,speed:1.5+Math.random()*3,drift:(Math.random()-.5)*1.5,angle:Math.random()*6,hue:Math.floor(Math.random()*360)}));
+ if(confettiFrame)cancelAnimationFrame(confettiFrame);let frames=0;
+ function draw(){if(currentSlide!==10){ctx.clearRect(0,0,rect.width,rect.height);confettiFrame=null;return}ctx.clearRect(0,0,rect.width,rect.height);pieces.forEach(p=>{p.y+=p.speed;p.x+=p.drift;p.angle+=.04;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.angle);ctx.fillStyle=`hsl(${p.hue},85%,70%)`;ctx.fillRect(-p.size/2,-p.size/2,p.size,p.size*1.6);ctx.restore();if(p.y>rect.height+15){p.y=-10;p.x=Math.random()*rect.width}});frames++;if(frames<170)confettiFrame=requestAnimationFrame(draw);else{ctx.clearRect(0,0,rect.width,rect.height);confettiFrame=null}}
+ draw();
+}
+let fireworkParticles=[];
+function resizeFireworks(){const c=document.getElementById("fireworks"),r=c.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,2);c.width=r.width*d;c.height=r.height*d;const x=c.getContext("2d");if(x)x.setTransform(d,0,0,d,0,0)}
+function burstFirework(){
+ const c=document.getElementById("fireworks"),r=c.getBoundingClientRect();const x=Math.random()*r.width,y=r.height*(.15+Math.random()*.45),hue=Math.floor(Math.random()*360);
+ for(let i=0;i<48;i++){const a=Math.PI*2*i/48,sp=1.2+Math.random()*3.1;fireworkParticles.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,life:45+Math.random()*25,max:70,hue,size:1+Math.random()*2})}
+ playTone(180+Math.random()*100,.08,"triangle",.012);
+}
+function startFireworks(){
+ stopFireworks();resizeFireworks();fireworkParticles=[];const reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+ if(reduced)return;
+ const canvas=document.getElementById("fireworks"),ctx=canvas.getContext("2d");if(!ctx)return;
+ let lastBurst=0;
+ function draw(now){
+  if(currentSlide!==10){stopFireworks();return}
+  const rect=canvas.getBoundingClientRect();ctx.clearRect(0,0,rect.width,rect.height);
+  if(now-lastBurst>650){burstFirework();if(Math.random()>.4)burstFirework();lastBurst=now}
+  fireworkParticles=fireworkParticles.filter(p=>p.life>0);
+  fireworkParticles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.025;p.vx*=.99;p.life--;ctx.globalAlpha=Math.max(0,p.life/p.max);ctx.fillStyle=`hsl(${p.hue},95%,70%)`;ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill()});
+  ctx.globalAlpha=1;fireworksFrame=requestAnimationFrame(draw);
+ }
+ fireworksFrame=requestAnimationFrame(draw);
+}
+function stopFireworks(){if(fireworksFrame)cancelAnimationFrame(fireworksFrame);fireworksFrame=null;fireworkParticles=[];const c=document.getElementById("fireworks");if(c){const x=c.getContext("2d");if(x)x.clearRect(0,0,c.width,c.height)}}
+window.addEventListener("resize",()=>{if(currentSlide===10)resizeFireworks()});
+function openModal(id){document.getElementById(id).classList.add("open")}
+function closeModal(id){document.getElementById(id).classList.remove("open")}
+document.getElementById("aboutBtn").addEventListener("click",()=>openModal("aboutModal"));
+document.querySelectorAll(".modal-backdrop").forEach(m=>m.addEventListener("click",e=>{if(e.target===m)closeModal(m.id)}));
+function openFeedback(){openModal("feedbackModal")}
+function sendFeedback(destination){
+ const rating=document.getElementById("rating").value,msg=document.getElementById("feedbackText").value.trim();
+ const text=`Samriddhi's birthday website feedback 💗\nRating: ${rating}\nMessage: ${msg||"(No extra message)"}\n— sent from the birthday surprise`;
+ if(destination==="whatsapp"){window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank","noopener,noreferrer")}
+ else{
+  try{if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).catch(()=>{})}catch(e){}
+  window.open("https://www.instagram.com/aproarjit?vrfl=bnhzMHQwY3hsc2Fs","_blank","noopener,noreferrer");
+  alert("Feedback text copy karne ki koshish ki gayi hai. Instagram par DM kholkar paste aur Send karna hoga.");
+ }
+ closeModal("feedbackModal");
+}
+document.getElementById("progressFill").style.width="10%";
+</script>
+</body>
+</html> 
