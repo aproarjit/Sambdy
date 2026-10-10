@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#11101d">
 <meta name="description" content="A little birthday surprise for Samriddhi.">
-<title>For Samriddhi 💗</title>
+<title>Only for Samriddhi 💝</title>
 <style>
 :root{
   --bg:#11101d;--panel:rgba(255,255,255,.075);--text:#fff8f4;--muted:#c7bfd5;
@@ -29,8 +29,8 @@ button,input,a{font:inherit}button{cursor:pointer}
 #app{position:relative;isolation:isolate;width:100%;height:100dvh;overflow:hidden;background:radial-gradient(ellipse at 10% 10%,color-mix(in srgb,var(--accent2) 16%,transparent),transparent 45%),radial-gradient(ellipse at 90% 85%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 45%),var(--bg);transition:background .4s}
 .ambient{position:absolute;inset:0;pointer-events:none;opacity:.32;background-image:radial-gradient(var(--text) .7px,transparent .7px);background-size:29px 29px}
 .topbar{position:absolute;z-index:20;top:calc(12px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);display:flex;justify-content:center;padding:0 4px}
-.theme-bar{display:flex;gap:9px;padding:9px 12px;border:1px solid var(--border);border-radius:30px;background:var(--panel);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
-.swatch{width:13px;height:13px;padding:0;border:0;border-radius:50%;outline:1px solid transparent}
+.theme-bar{display:flex;gap:10px;padding:11px 15px;border:1px solid color-mix(in srgb,var(--accent) 60%,var(--border));border-radius:30px;background:color-mix(in srgb,var(--bg) 68%,transparent);box-shadow:0 7px 28px rgba(0,0,0,.22),0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+.swatch{width:15px;height:15px;padding:0;border:0;border-radius:50%;outline:1px solid rgba(255,255,255,.35);outline-offset:1px;transition:transform .15s}.swatch:active{transform:scale(1.2)}
 .swatch.active{outline:2px solid var(--text);outline-offset:3px}
 .swatch[data-pick="gold"]{background:#e8bd76}.swatch[data-pick="pink"]{background:#ff8ebc}.swatch[data-pick="lavender"]{background:#bd9cff}.swatch[data-pick="ocean"]{background:#75d8e8}.swatch[data-pick="mint"]{background:#72dca1}.swatch[data-pick="coral"]{background:#ff987f}
 .corner-btn{position:absolute;z-index:22;top:calc(12px + env(safe-area-inset-top));padding:9px 11px;border-radius:25px;border:1px solid var(--border);color:var(--text);background:var(--panel);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);font-size:12px}
@@ -72,7 +72,7 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
 .modal h2{margin-bottom:10px}.modal p{margin:10px 0}.modal .button-row{margin-top:16px}
 #countdown{font-size:clamp(42px,12vw,72px);font-weight:900;color:var(--accent2);min-height:1.15em}
 #feedbackModal textarea{width:100%;min-height:90px;resize:vertical;padding:12px;border-radius:14px;border:1px solid var(--border);background:var(--panel);color:var(--text);font:inherit;user-select:text}
-#feedbackModal select{width:100%;padding:11px;border-radius:12px;border:1px solid var(--border);background:var(--bg);color:var(--text)}
+.rating-stars{display:flex;justify-content:center;gap:8px;margin:12px 0 4px}.rating-star{border:0;background:transparent;color:#777;font-size:clamp(30px,8vw,39px);padding:2px;line-height:1;filter:grayscale(1);opacity:.65;transition:transform .15s,color .15s,filter .15s}.rating-star.selected,.rating-star.preview{color:#ffbf3f;filter:none;opacity:1;text-shadow:0 3px 15px rgba(255,191,63,.22)}.rating-star:active{transform:scale(1.18)}#ratingLabel{min-height:18px;text-align:center;font-size:12px;color:var(--accent);font-weight:700}#feedbackModal textarea{display:block;min-height:105px;max-height:28vh;resize:vertical;margin-top:7px}#feedbackStatus{min-height:17px;margin-top:8px;font-size:12px;color:var(--accent2)}.link-list{display:grid;gap:8px;margin-top:14px}.link-list a{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid var(--border);border-radius:13px;background:var(--panel);color:var(--text);text-decoration:none;font-size:13px}.link-list a span:last-child{margin-left:auto;color:var(--accent)}
 @media(max-height:720px){
  .slide{padding-top:70px;padding-bottom:calc(12px + env(safe-area-inset-bottom))}
  .content{gap:7px}.glass{padding:12px}.big-emoji{font-size:45px}
@@ -110,11 +110,11 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
   <section class="slide active" id="s1">
     <div class="content">
       <div class="eyebrow">A little surprise for someone special</div>
-      <div class="big-emoji">🎁✨</div>
-      <h1>Hey, Samriddhi,<br><span class="gradient">It's Your Special Day!</span></h1>
+      <div class="big-emoji">😊🎁✨</div>
+      <h1>👋, Samriddhi<br><span class="gradient">It's Your Special Day!</span></h1>
       <p>Mujhe yad he 20 October, Birthday girl ka special day.<br>Aur tumhara yah bhai kuch laaya hai. 👀</p>
       <button class="primary" onclick="go(2)">Chalo calibrate kare →</button>
-      <div class="hint">Screen par tap karo… thodi magic milegi ✨</div>
+      <div class="hint">Screen par drag karo… thodi magic milegi ✨</div>
     </div>
   </section>
 
@@ -122,11 +122,11 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
   <section class="slide" id="s2">
     <div class="content">
       <div class="big-emoji">🔐</div><div class="eyebrow">Security check, Madam</div>
-      <h2>Itna bhi easy nahi hai.</h2>
-      <p>Mere phone ka password yad he?.<br>Dekhte hain kitni smart ho tum. 😏</p>
+      <h2>Itna bhi easy nahi hai..</h2>
+      <p>Mere phone ka password yad he?<br>Dekhte hain kitni smart ho tum.. 😏</p>
       <div class="glass" style="display:flex;align-items:center;flex-direction:column;gap:12px">
         <input id="passwordInput" type="password" inputmode="numeric" maxlength="4" placeholder="••••" aria-label="Password">
-        <button class="primary" onclick="checkPassword()">Unlock karo 🔓</button>
+        <button class="primary" onclick="checkPassword()">Unlock koro 🔓</button>
         <div class="message" id="passwordMessage" aria-live="polite"></div>
       </div>
       <div class="button-row"><button class="secondary" onclick="go(1)">← Back</button></div>
@@ -139,11 +139,11 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
       <div class="big-emoji">😭😂</div><div class="eyebrow">Access granted…</div>
       <h1>Waah, Yaar!</h1>
       <div class="glass">
-        <p>Mera password bhi yaad hai!</p>
+        <p>Tumhe mere phone ka password bhi yaad hai.. 🤫</p>
         <p style="margin-top:8px;color:var(--text)">Ab zyada proud mat hona. 😌</p>
-        <p style="margin-top:7px">Waise thoda sa proud ho sakti ho. 🤏😂</p>
+        <p style="margin-top:7px">Waise thoda sa proud to ho sakti ho. 🤏😂</p>
       </div>
-      <div class="button-row"><button class="secondary" onclick="go(2)">← Back</button><button class="primary" onclick="go(4)">Aage chalte he →</button></div>
+      <div class="button-row"><button class="secondary" onclick="go(2)">← Back</button><button class="primary" onclick="go(4)">Aage chalo →</button></div>
     </div>
   </section>
 
@@ -153,7 +153,7 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
       <div class="eyebrow">An extremely important fact</div><div class="big-emoji">👑</div>
       <h1>64 days older.<br><span class="gradient">64× wiser?</span></h1>
       <div class="glass">
-        <p>Main tumse 64 din bada hoon, achaa</p>
+        <p>Vese pata he, main tumse 64 din bada hoon.. 😉</p>
         <p style="margin-top:8px;color:var(--text)">Respect toh banta hai, Sammy! 😌</p>
         <p style="margin-top:8px">Meri maturity ka result abhi pending hai. Tumhara bhi check karna padega. 😂</p>
       </div>
@@ -169,11 +169,11 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
         <div style="position:absolute;width:150px;height:150px;border:1px solid var(--border);border-radius:50%;animation:float 5s infinite"></div>
         <div style="position:absolute;width:112px;height:112px;border:1px dashed var(--accent);border-radius:50%;opacity:.7"></div>
         <div class="big-emoji" style="font-size:68px">🌷</div>
-        <span style="position:absolute;top:5px;right:16px;font-size:24px">✨</span><span style="position:absolute;bottom:8px;left:10px;font-size:23px">💗</span><span style="position:absolute;top:20px;left:10px;font-size:19px">⭐</span>
+        <span style="position:absolute;top:5px;right:16px;font-size:24px">✨</span><span style="position:absolute;bottom:8px;left:10px;font-size:23px">💖</span><span style="position:absolute;top:20px;left:10px;font-size:19px">⭐</span>
       </div>
-      <h2>👋, Samriddhi Sharma</h2>
+      <h2>Hey, Samriddhi Sharma</h2>
       <p>Birthday girl. Class 11 wali partner-in-crime.<br>Aur meri pyari behen aur dost bhi. 🤭</p>
-      <p>Photos toh nahi hain yarr, par memories abhi bhi hain. 🫶</p>
+      <p>Photos toh nahi hain yar, par memories to hamesha rahengi. 🫶</p>
       <div class="button-row"><button class="secondary" onclick="go(4)">← Back</button><button class="primary" onclick="go(6)">Yeh memory yaad hai? →</button></div>
     </div>
   </section>
@@ -182,14 +182,14 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
   <section class="slide" id="s6">
     <div class="content">
       <div class="eyebrow">Little moments, real memories</div><div class="big-emoji">📚🫶</div>
-      <h2>School se shuru hui<br>ek alag si bonding.</h2>
+      <h2>School se shuru hui<br>ek alag si bonding..</h2>
       <div class="glass story-card">
-        <p>School ki baatein aur kabhi-kabhi project ki tension… hee na. 😭</p>
+        <p>School ki baatein aur kabhi-kabhi project ki tension… koi na. 😭</p>
         <p>Har cheez perfect ho, zaroori nahi. Kuch memories bas isliye special hoti hain kyunki unmein apne log hote hain.</p>
-        <p>Rakhi wali memory bhi apni jagah bahut special hai. 💗</p>
+        <p>Rakhi wali memory bhi apni jagah bahut special hai.. 💗</p>
       </div>
       <p>Project ho ya life, hope hai hum ek-doosre ko support karte rahein, ok.. 🤝</p>
-      <div class="button-row"><button class="secondary" onclick="go(5)">← Back</button><button class="primary" onclick="go(7)">Special latter 💌</button></div>
+      <div class="button-row"><button class="secondary" onclick="go(5)">← Back</button><button class="primary" onclick="go(7)">Special baat 💌</button></div>
     </div>
   </section>
 
@@ -199,12 +199,12 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
       <div class="eyebrow">A little note from your caring bhai</div>
       <h2>Dear Samriddhi, 💌</h2>
       <div class="letter">
-        <p>Har relation ko explain karne ke liye koi label zaroori nahi hota.</p>
-        <p>Tum meri biological sister nahi ho, but honestly, hamara bond mere liye sister-friend jaisa special hai. 💗</p>
-        <p>Class 11, school ki baatein, NCSC project aur Rakhi ka moment — in sabki apni jagah hai. Har memory badi ya perfect ho, zaroori nahi; kuch moments bas apne lagte hain.</p>
-        <p>Main kabhi-kabhi annoying ho sakta hoon. Okay, kaafi caring bhi. 😭😂 But I genuinely wish ki tum khush raho, confident raho aur apne dreams ke liye aage badhti raho.</p>
-        <p>Life mein changes aayenge, school bhi khatam hoga aur naye log milenge. Bas hope hai ki humari bonding mein respect, care aur honesty hamesha rahe.</p>
-        <p style="color:var(--accent);font-weight:800">Happy Birthday, Samriddhi. Thanks for being a special part of my school-life story, --Arjit Pr. 🫶</p>
+        <p>Har relation ko explain karne ke liye koi label zaroori nahi hota..</p>
+        <p>Tum meri biological bhen nahi ho, but honestly, hamara bond mere liye sister-friend jaisa special hai. 💗</p>
+        <p>Class 11, school ki baatein, NCSC project aur Rakhi ka moment — in sabki apni jagah special hai. Har memory badi ya perfect ho, zaroori nahi; kuch moments bas apne lagte hain. 😊</p>
+        <p>Main kabhi-kabhi thoda annoying aur cering ho sakta hoon. Okay, kaafi. 😭😂 But I genuinely wish ki tum khush raho, confident raho aur apne dreams ke liye aage badhti raho.</p>
+        <p>Life mein kai changes aayenge, school bhi khatam hoga aur naye log milenge. Bas hope hai ki humari bonding mein respect, care aur honesty hamesha rahe.</p>
+        <p style="color:var(--accent);font-weight:800">Happy Birthday, Samriddhi. Thanks for being a special part of my school-life story. 🫶<br>-Arjit Pr.</p>
       </div>
       <div class="button-row"><button class="secondary" onclick="go(6)">← Back</button><button class="primary" onclick="go(8)">Ek caring reminder →</button></div>
     </div>
@@ -218,10 +218,10 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
       <div class="glass">
         <p>Studies important hain, but tumhari health aur peace bhi utni hi important hai.</p>
         <p style="margin-top:9px">Time par rest lena, paani peena aur khud par unnecessary pressure mat daalna.</p>
-        <p style="margin-top:9px;color:var(--text)">Apne dreams ko seriously lena. Marks important ho sakte hain, but they don't define your whole worth. 💗</p>
+        <p style="margin-top:9px;color:var(--text)">Apne dreams ko seriously lena. Marks important ho sakte hain, but they don't define your whole worth, ok.. 💗</p>
       </div>
       <div class="pills"><span>📖 Study</span><span>🌿 Rest</span><span>✨ Keep growing</span></div>
-      <div class="button-row"><button class="secondary" onclick="go(7)">← Back</button><button class="primary" onclick="go(9)">Wish time 🌠</button></div>
+      <div class="button-row"><button class="secondary" onclick="go(7)">← Back</button><button class="primary" onclick="go(9)">Aab wish time 🌠</button></div>
     </div>
   </section>
 
@@ -232,7 +232,7 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
       <h1>Ek wish maango.<br><span class="gradient">Dil se, birthday girl.</span></h1>
       <div class="wish">
         <p>Ab aankhein band karne ka mann ho toh kar lo, aur apne liye ek achhi si wish maango. ✨</p>
-        <p style="margin-top:8px">Ready? Countdown ke baad surprise ka final part unlock hoga. 💗</p>
+        <p style="margin-top:8px">Ready?? Countdown ke baad surprise ka final part unlock hoga. 💖</p>
       </div>
       <div id="countdown" aria-live="polite"></div>
       <div class="button-row"><button class="secondary" onclick="go(8)">← Back</button><button class="primary" id="wishButton" onclick="startCountdown()">3… 2… 1… 🎉</button></div>
@@ -248,21 +248,15 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
       <div class="glass">
         <p style="color:var(--text);font-weight:800">Birthday ek din ka hota hai.</p>
         <p>Surprise kuch minutes ka.</p>
-        <p style="margin-top:7px">But tum meri sister ho — every single day.</p>
+        <p style="margin-top:7px">But tum meri bhen ho — every single day..</p>
         <p style="margin-top:8px;color:var(--accent);font-weight:800">Love you, Samriddhi! 💗</p>
-        <p style="font-size:11px;margin-top:4px">Tumhara bhai forever. -Arjit Pr. 😉</p>
-      </div>
-      <div class="insta-list">
-        <a class="insta-link" href="https://www.instagram.com/aproarjit?vrfl=bnhzMHQwY3hsc2Fs" target="_blank" rel="noopener noreferrer">
-          <div class="insta-icon">📸</div><div><strong>Follow me on Insta..</strong><small>@aproarjit</small></div><span style="margin-left:auto">↗</span>
-        </a>
-        <a class="insta-link" href="https://www.instagram.com/samriddhi.core_20?obrf=ZDE2MmdpaDFzb3Zr" target="_blank" rel="noopener noreferrer">
-          <div class="insta-icon">💖</div><div><strong>Birthday girl (Sammy)</strong><small>@samriddhi.core_20</small></div><span style="margin-left:auto">↗</span>
-        </a>
+        <p style="font-size:11px;margin-top:4px">Tumhara bhai forever -Arjit Pr. 😉</p>
       </div>
       <div class="button-row">
-        <button class="secondary" onclick="openFeedback()">Feedback to banta he 💌</button>
-        <button class="secondary" onclick="go(1)">Fir se dekho ↺</button>
+        <button class="primary" onclick="openModal('linksModal')">Yahan bhi follow/check karna. 🤗</button>
+        <button class="secondary" onclick="openFeedback()">Feedback to dena padega.. 💌</button>
+        <button class="secondary" onclick="go(1)">Fir se dekhna hai ↺</button>
+        <button class="secondary" onclick="replayMagic()">Ek baar aur magic ✨</button>
       </div>
       <div class="hint">Finale par raho — fireworks chalte rahenge ✨</div>
     </div>
@@ -279,18 +273,42 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
     </div>
   </div>
 
+  <!-- Social links modal -->
+  <div class="modal-backdrop" id="linksModal" role="dialog" aria-modal="true" aria-labelledby="linksTitle">
+    <div class="modal">
+      <h2 id="linksTitle">Connect with us ✨</h2>
+      <p>Yahan saare links ek jagah hain 💖</p>
+      <div class="link-list">
+        <a href="https://www.instagram.com/aproarjit?vrfl=bnhzMHQwY3hsc2Fs" target="_blank" rel="noopener noreferrer"><span>📸</span><strong>My Instagram · @aproarjit</strong><span>↗</span></a>
+        <a href="https://www.instagram.com/samriddhi.core_20?obrf=ZDE2MmdpaDFzb3Zr" target="_blank" rel="noopener noreferrer"><span>💖</span><strong>Samriddhi's Instagram</strong><span>↗</span></a>
+        <a href="https://github.com/aproarjit" target="_blank" rel="noopener noreferrer"><span>💻</span><strong>GitHub</strong><span>↗</span></a>
+        <a href="https://youtube.com/@aproarjit" target="_blank" rel="noopener noreferrer"><span>▶️</span><strong>YouTube</strong><span>↗</span></a>
+        <a href="https://photos.app.goo.gl/EPX8FwFp46Bq3mCr7" target="_blank" rel="noopener noreferrer"><span>🖼️</span><strong>Photo memories</strong><span>↗</span></a>
+      </div>
+      <div class="button-row"><button class="secondary" onclick="closeModal('linksModal')">Done 💗</button></div>
+    </div>
+  </div>
+
   <!-- Feedback modal -->
   <div class="modal-backdrop" id="feedbackModal" role="dialog" aria-modal="true" aria-labelledby="feedbackTitle">
     <div class="modal">
-      <h2 id="feedbackTitle">Tumhe kaisa laga? 💌</h2>
-      <p>Apna honest feedback likho. Message automatically send nahi hoga — tum app mein jaakar khud Send kar sakti ho.</p>
-      <label for="rating" class="hint">Your rating</label>
-      <select id="rating"><option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ Loved it!</option><option value="⭐⭐⭐⭐">⭐⭐⭐⭐ Really nice</option><option value="⭐⭐⭐">⭐⭐⭐ It was good</option><option value="⭐⭐">⭐⭐ Needs improvement</option><option value="⭐">⭐ Honest feedback</option></select>
-      <label for="feedbackText" class="hint" style="display:block;margin-top:12px">Message (optional)</label>
-      <textarea id="feedbackText" placeholder="Jo bhi honestly kehna ho, yahan likho…"></textarea>
+      <h2 id="feedbackTitle">Vese, tumhe yah kaisa laga? 💌</h2>
+      <p>Stars par tap karke rating choose karo, phir apna message likho. Send karne se pehle WhatsApp/Instagram khulega.</p>
+      <div class="hint" style="text-align:center;margin-top:12px">Your rating · Required</div>
+      <div class="rating-stars" id="ratingStars" role="group" aria-label="Choose a rating from one to five stars">
+        <button type="button" class="rating-star" data-rating="1" aria-label="1 star" aria-pressed="false">★</button>
+        <button type="button" class="rating-star" data-rating="2" aria-label="2 stars" aria-pressed="false">★</button>
+        <button type="button" class="rating-star" data-rating="3" aria-label="3 stars" aria-pressed="false">★</button>
+        <button type="button" class="rating-star" data-rating="4" aria-label="4 stars" aria-pressed="false">★</button>
+        <button type="button" class="rating-star" data-rating="5" aria-label="5 stars" aria-pressed="false">★</button>
+      </div>
+      <div id="ratingLabel" aria-live="polite">Tap a star to rate</div>
+      <label for="feedbackText" class="hint" style="display:block;margin-top:14px">Your feedback message</label>
+      <textarea id="feedbackText" placeholder="Website kaisa laga? Kya achha laga ya kya improve karna chahiye? 💗" maxlength="1200"></textarea>
+      <div id="feedbackStatus" aria-live="polite"></div>
       <div class="button-row">
-        <button class="primary" onclick="sendFeedback('whatsapp')">WhatsApp ↗</button>
-        <button class="secondary" onclick="sendFeedback('instagram')">Instagram ↗</button>
+        <button class="primary" onclick="sendFeedback('whatsapp')">Send on WhatsApp ↗</button>
+        <button class="secondary" onclick="sendFeedback('instagram')">Send on Instagram ↗</button>
         <button class="secondary" onclick="closeModal('feedbackModal')">Cancel</button>
       </div>
     </div>
@@ -300,7 +318,7 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
   <div class="modal-backdrop" id="soundModal" role="dialog" aria-modal="true" aria-labelledby="soundTitle">
     <div class="modal">
       <h2 id="soundTitle">Sound settings 🔊</h2>
-      <p>Sound browser ki first interaction ke baad start hota hai. Tum ise kabhi bhi On/Off kar sakti ho.</p>
+      <p>Background ka odd drone music hata diya hai. Ab sirf soft button tones aur finale fireworks ke gentle sound effects hain. Tum sound kabhi bhi On/Off kar sakti ho.</p>
       <div class="button-row"><button class="primary" id="soundToggle" onclick="toggleSound()">Turn sound on</button><button class="secondary" onclick="closeModal('soundModal')">Close</button></div>
     </div>
   </div>
@@ -310,7 +328,7 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
 <script>
 const TOTAL=10;
 let currentSlide=1,confettiFrame=null,fireworksFrame=null;
-let audioContext=null,soundEnabled=true,ambientOscillators=[],ambientGain=null,ambientTimer=null;
+let audioContext=null,soundEnabled=true;
 let countdownTimer=null,countdownActive=false;
 const themes=["gold","pink","lavender","ocean","mint","coral"];
 const slideThemes={1:"gold",2:"lavender",3:"pink",4:"coral",5:"mint",6:"ocean",7:"lavender",8:"mint",9:"ocean",10:"pink"};
@@ -355,30 +373,37 @@ function checkPassword(){
  else{msg.textContent="Wrong password! Ek aur try karo, detective. 😏";const glass=input.closest(".glass");glass.classList.remove("shake");void glass.offsetWidth;glass.classList.add("shake");haptic(35);playTone(180,.12,"triangle",.035);input.select()}
 }
 document.getElementById("passwordInput").addEventListener("keydown",e=>{if(e.key==="Enter")checkPassword()});
-const emojis=["💗","💖","✨","🌸","🫶","💫","💕","🎀","⭐","🌷","💝","🦋"];
+const emojis=["✨","💖","💗","🌸","💫","🦋","🎀","⭐","🫶","🌷"];
 function popEmoji(x,y,count=3){for(let i=0;i<count;i++){const el=document.createElement("span");el.className="particle";el.textContent=emojis[Math.floor(Math.random()*emojis.length)];el.style.left=(x+(Math.random()-.5)*65)+"px";el.style.top=(y+(Math.random()-.5)*25)+"px";el.style.setProperty("--dx",((Math.random()-.5)*90)+"px");document.body.appendChild(el);setTimeout(()=>el.remove(),1000)}}
-document.addEventListener("pointerdown",e=>{if(e.target.closest("input,textarea,button,a,select"))return;popEmoji(e.clientX,e.clientY,2);unlockSound()});
-function unlockSound(){if(!soundEnabled&&audioContext){return}if(!audioContext){try{audioContext=new(window.AudioContext||window.webkitAudioContext)()}catch(e){return}}if(audioContext.state==="suspended")audioContext.resume().catch(()=>{});if(soundEnabled)startAmbient()}
+let lastSparkleAt=0;
+const sparkleExcluded='input,textarea,button,a,select,.modal-backdrop';
+function sparkleAlong(x,y,target){
+ if(target&&target.closest&&target.closest(sparkleExcluded))return;
+ const now=performance.now();
+ if(now-lastSparkleAt>55){popEmoji(x,y,1);lastSparkleAt=now}
+}
+document.addEventListener("pointerdown",e=>{
+ if(e.target.closest(sparkleExcluded))return;
+ popEmoji(e.clientX,e.clientY,2);unlockSound();lastSparkleAt=performance.now();
+});
+// Mouse/stylus and modern mobile pointer dragging.
+document.addEventListener("pointermove",e=>{
+ if(e.pointerType==="mouse"&&!e.buttons)return;
+ sparkleAlong(e.clientX,e.clientY,e.target);
+},{passive:true});
+// Touch fallback for mobile browsers that suppress pointermove during a finger drag.
+document.addEventListener("touchmove",e=>{
+ const t=e.touches&&e.touches[0];if(!t)return;
+ sparkleAlong(t.clientX,t.clientY,e.target);
+},{passive:true});
+function unlockSound(){if(!audioContext){try{audioContext=new(window.AudioContext||window.webkitAudioContext)()}catch(e){return}}if(audioContext.state==="suspended")audioContext.resume().catch(()=>{})}
 function playTone(freq=520,duration=.08,type="sine",volume=.025){
  if(!soundEnabled)return;unlockSound();if(!audioContext)return;
- try{const osc=audioContext.createOscillator(),gain=audioContext.createGain();osc.type=type;osc.frequency.value=freq;gain.gain.setValueAtTime(volume,audioContext.currentTime);gain.gain.exponentialRampToValueAtTime(.001,audioContext.currentTime+duration);osc.connect(gain);gain.connect(audioContext.destination);osc.start();osc.stop(audioContext.currentTime+duration)}catch(e){}
-}
-function startAmbient(){
- if(!soundEnabled||!audioContext||ambientOscillators.length)return;
- try{
-  ambientGain=audioContext.createGain();ambientGain.gain.value=.012;ambientGain.connect(audioContext.destination);
-  [130.81,196,261.63].forEach((freq,i)=>{const osc=audioContext.createOscillator();const gain=audioContext.createGain();osc.type=i===1?"sine":"triangle";osc.frequency.value=freq;gain.gain.value=i===0?.18:.1;osc.connect(gain);gain.connect(ambientGain);osc.start();ambientOscillators.push({osc,gain})});
-  ambientTimer=setInterval(()=>{if(!soundEnabled||!audioContext)return;const notes=[261.63,329.63,392,440,523.25];const freq=notes[Math.floor(Math.random()*notes.length)];playTone(freq,.45,"sine",.012)},2100);
- }catch(e){}
-}
-function stopAmbient(){
- if(ambientTimer){clearInterval(ambientTimer);ambientTimer=null}
- ambientOscillators.forEach(o=>{try{o.osc.stop()}catch(e){}});ambientOscillators=[];ambientGain=null;
+ try{const osc=audioContext.createOscillator(),gain=audioContext.createGain();osc.type="sine";osc.frequency.setValueAtTime(freq,audioContext.currentTime);gain.gain.setValueAtTime(Math.min(volume,.045),audioContext.currentTime);gain.gain.exponentialRampToValueAtTime(.0001,audioContext.currentTime+duration);osc.connect(gain);gain.connect(audioContext.destination);osc.start();osc.stop(audioContext.currentTime+duration)}catch(e){}
 }
 function setSound(enabled){
  soundEnabled=enabled;
- if(enabled){unlockSound();startAmbient();playTone(660,.1,"sine",.035)}
- else stopAmbient();
+ if(enabled){unlockSound();playTone(660,.1,"sine",.025)}
  document.getElementById("soundBtn").textContent=enabled?"🔊 Sound: On":"🔇 Sound: Off";
  document.getElementById("soundToggle").textContent=enabled?"Turn sound off":"Turn sound on";
  safeSet("samBirthdaySound",enabled?"on":"off");
@@ -435,18 +460,33 @@ function closeModal(id){document.getElementById(id).classList.remove("open")}
 document.getElementById("aboutBtn").addEventListener("click",()=>openModal("aboutModal"));
 document.querySelectorAll(".modal-backdrop").forEach(m=>m.addEventListener("click",e=>{if(e.target===m)closeModal(m.id)}));
 function openFeedback(){openModal("feedbackModal")}
+let selectedRating=0;
+const ratingWords=["", "Not great", "Could be better", "It was okay", "Really nice", "Loved it! 💖"];
+document.querySelectorAll(".rating-star").forEach(star=>{
+ star.addEventListener("click",()=>{
+  selectedRating=Number(star.dataset.rating);
+  document.querySelectorAll(".rating-star").forEach(s=>{const active=Number(s.dataset.rating)<=selectedRating;s.classList.toggle("selected",active);s.setAttribute("aria-pressed",String(Number(s.dataset.rating)===selectedRating))});
+  document.getElementById("ratingLabel").textContent=`${selectedRating}/5 · ${ratingWords[selectedRating]}`;
+  document.getElementById("feedbackStatus").textContent="";
+ });
+ star.addEventListener("pointerenter",()=>document.querySelectorAll(".rating-star").forEach(s=>s.classList.toggle("preview",Number(s.dataset.rating)<=Number(star.dataset.rating))));
+ star.addEventListener("pointerleave",()=>document.querySelectorAll(".rating-star").forEach(s=>s.classList.remove("preview")));
+});
 function sendFeedback(destination){
- const rating=document.getElementById("rating").value,msg=document.getElementById("feedbackText").value.trim();
- const text=`Samriddhi's birthday website feedback 💗\nRating: ${rating}\nMessage: ${msg||"(No extra message)"}\n— sent from the birthday surprise`;
- if(destination==="whatsapp"){window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank","noopener,noreferrer")}
- else{
-  try{if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).catch(()=>{})}catch(e){}
+ const msg=document.getElementById("feedbackText").value.trim(),status=document.getElementById("feedbackStatus");
+ if(!selectedRating){status.textContent="Pehle stars par tap karke rating choose karo ⭐";return}
+ if(!msg){status.textContent="Apna feedback message bhi likh do 💌";document.getElementById("feedbackText").focus();return}
+ const text=`Samriddhi's birthday website feedback 💗\nRating: ${"⭐".repeat(selectedRating)} (${selectedRating}/5)\nMessage: ${msg}\n— sent from the birthday surprise`;
+ if(destination==="whatsapp"){
+  window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank","noopener,noreferrer");
+  status.textContent="WhatsApp khul raha hai — wahan Send dabana mat bhoolna.";
+ }else{
+  try{if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(()=>{status.textContent="Feedback copied! Instagram DM mein paste karke Send karo."}).catch(()=>{status.textContent="Instagram DM mein message paste karke Send karo."})}catch(e){status.textContent="Instagram DM mein message paste karke Send karo."}
   window.open("https://www.instagram.com/aproarjit?vrfl=bnhzMHQwY3hsc2Fs","_blank","noopener,noreferrer");
-  alert("Feedback text copy karne ki koshish ki gayi hai. Instagram par DM kholkar paste aur Send karna hoga.");
  }
- closeModal("feedbackModal");
-}
+} 
+function replayMagic(){go(10);if(soundEnabled){playTone(523,.12,"sine",.025);setTimeout(()=>playTone(659,.12,"sine",.025),140);setTimeout(()=>playTone(784,.18,"sine",.025),280)}}
 document.getElementById("progressFill").style.width="10%";
 </script>
 </body>
-</html> 
+</html>
