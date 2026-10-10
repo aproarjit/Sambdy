@@ -292,9 +292,9 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
   <!-- Feedback modal -->
   <div class="modal-backdrop" id="feedbackModal" role="dialog" aria-modal="true" aria-labelledby="feedbackTitle">
     <div class="modal">
-      <h2 id="feedbackTitle">Vese, tumhe yah kaisa laga? Batao.. 💌</h2>
+      <h2 id="feedbackTitle">Honestly, tumhe yah kaisa laga? Batao.. 💌</h2>
       <p>Stars par tap karke rating choose karo, phir apna message likho. Send karne se pehle WhatsApp/Instagram khulega.</p>
-      <p>Aur ha yah mene pahli bar sir tumhare leye banaya he.. 🤗</p>
+      <p>Aur ha, yah mene pahli bar sirf apni bhen leye hi banaya he, so.. 🤗</p>
       <div class="hint" style="text-align:center;margin-top:12px">Your rating · Required</div>
       <div class="rating-stars" id="ratingStars" role="group" aria-label="Choose a rating from one to five stars">
         <button type="button" class="rating-star" data-rating="1" aria-label="1 star" aria-pressed="false">★</button>
@@ -303,14 +303,14 @@ input:focus{border-color:var(--accent)}.message{min-height:18px;color:var(--acce
         <button type="button" class="rating-star" data-rating="4" aria-label="4 stars" aria-pressed="false">★</button>
         <button type="button" class="rating-star" data-rating="5" aria-label="5 stars" aria-pressed="false">★</button>
       </div>
-      <div id="ratingLabel" aria-live="polite">Tap a star to rate</div>
+      <div id="ratingLabel" aria-live="polite">Ab stars par tap karo.. 👆</div>
       <label for="feedbackText" class="hint" style="display:block;margin-top:14px">Your feedback message</label>
       <textarea id="feedbackText" placeholder="Website kaisa laga? Kya achha laga ya kya improve karna chahiye? 💗" maxlength="1200"></textarea>
       <div id="feedbackStatus" aria-live="polite"></div>
       <div class="button-row">
         <button class="primary" onclick="sendFeedback('whatsapp')">Send on WhatsApp ↗</button>
         <button class="secondary" onclick="sendFeedback('instagram')">Send on Instagram ↗</button>
-        <button class="secondary" onclick="closeModal('feedbackModal')">Cancel</button>
+        <button class="secondary" onclick="closeModal('feedbackModal')">Nahi..</button>
       </div>
     </div>
   </div>
